@@ -10,7 +10,6 @@ public abstract class AbstractPlane<T extends AbstractPlane<T>> implements Plane
         return this.getClass().getSimpleName();
     }
 
-
     public AbstractPlane(AbstractPlaneBuilder<T> builder) {
         this.x = builder.x;
         this.y = builder.y;

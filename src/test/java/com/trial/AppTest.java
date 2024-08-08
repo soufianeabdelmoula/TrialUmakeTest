@@ -1,14 +1,8 @@
 package com.trial;
 
-import com.trial.plane.beans.Shape;
+import com.trial.plane.beans.Triangle;
 import com.trial.plane.beans.Square;
-import com.trial.plane.Plane;
-import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class AppTest {
 
@@ -16,7 +10,7 @@ public class AppTest {
     @Test
     public void testApp() {
 
-        Square square1 = new Square.Builder()
+        final Square square1 = new Square.Builder()
                 .addX(10)
                 .addY(20)
                 .build();
@@ -31,40 +25,23 @@ public class AppTest {
                 .addY(50)
                 .build();
 
-        Shape shape = new Shape.Builder()
+        Triangle shape = new Triangle.Builder()
                 .addX(5)
                 .addY(20)
                 .build();
 
-        Shape shape2 = new Shape.Builder()
+        Triangle shape2 = new Triangle.Builder()
                 .addX(60)
                 .addY(320)
                 .build();
 
-        List<Plane> planes = new ArrayList<>();
 
-        planes.add(square1);
-        planes.add(square2);
-        planes.add(square3);
-        planes.add(shape);
-        planes.add(shape2);
+        // calculer l'air pour les squares et les triangles
 
-        List<Plane> planesSup250 = new ArrayList<>();
 
-        for (Plane plane : planes) {
-            if (plane.areaCalc() > 250 ) {
-                planesSup250.add(plane);
-            }
-        }
+        // Ici je voudrais filtrer les éléments qui ont une aires < 250 et les ajouter dans une listes
 
-        Assert.assertEquals(3, planesSup250.size());
 
-        List<String> planesNames = new ArrayList<>();
 
-        for (Plane plane : planes) {
-            planesNames.add(plane.getType());
-        }
-
-        Assert.assertEquals("Shape", planesNames.get(3));
     }
 }
