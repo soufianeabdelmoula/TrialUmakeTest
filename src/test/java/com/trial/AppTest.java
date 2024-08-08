@@ -36,10 +36,10 @@ public class AppTest {
                 .build();
 
 
-        // calculer l'air pour les squares et les triangles
+        // calculer l'air pour les squares et les triangles et les afficher dans la console
 
 
-        // Ici je voudrais filtrer les éléments qui ont une aires < 250 et les ajouter dans une listes
+        // Ici je voudrais filtrer les éléments qui ont une aires > 250 et les ajouter dans une listes pour l'afficher dans leurs types
 
 
 
