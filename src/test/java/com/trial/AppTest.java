@@ -1,8 +1,15 @@
 package com.trial;
 
-import com.trial.plane.beans.Triangle;
+import com.trial.node.Node;
 import com.trial.plane.beans.Square;
+import com.trial.plane.beans.Triangle;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class AppTest {
 
@@ -25,23 +32,65 @@ public class AppTest {
                 .addY(50)
                 .build();
 
-        Triangle shape = new Triangle.Builder()
+        Triangle triangle1 = new Triangle.Builder()
                 .addX(5)
                 .addY(20)
                 .build();
 
-        Triangle shape2 = new Triangle.Builder()
+        Triangle triangle2 = new Triangle.Builder()
                 .addX(60)
                 .addY(320)
                 .build();
 
 
-        // calculer l'air pour les squares et les triangles et les afficher dans la console
+        // Calculer l'aire pour les carrés et les triangles
+        // et afficher le résultat
 
 
-        // Ici je voudrais filtrer les éléments qui ont une aires > 250 et les ajouter dans une listes pour l'afficher dans leurs types
-
-
+        // Ici je voudrais filtrer les éléments qui ont une aire < 250
+        // Ensuite je voudrais afficher la taille de liste par type d'élément.
 
     }
+
+    @Test
+    public void pair_impair() {
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7);
+
+        Map<Boolean, List<Integer>> partitionedNumbers = new HashMap<>();
+
+        Assertions.assertEquals(4, partitionedNumbers.get(false).size());
+        Assertions.assertEquals(3, partitionedNumbers.get(true).size());
+    }
+
+    @Test
+    public void find_in_element() {
+        final String search = "pas";
+        final String text = "Je crois avoir passé le chemin, mais je ne suis pas sûr";
+
+        // Ici je voudrais vérifier si le texte contient le mot search
+        Assertions.assertTrue(findInElement(search, text));
+    }
+
+    @Test
+    public void build_tree_node() {
+        List<BigInteger> numbers = List.of(BigInteger.valueOf(2), BigInteger.valueOf(4), BigInteger.valueOf(5), BigInteger.valueOf(10), BigInteger.valueOf(3), BigInteger.valueOf(7));
+
+        Node root = new Node();
+        root.setValue(BigInteger.valueOf(1));
+
+        buildTree(numbers, root);
+
+        Assertions.assertEquals(BigInteger.valueOf(2), root.getLeft().getValue());
+        Assertions.assertEquals(BigInteger.valueOf(7), root.getRight().getRight().getValue());
+    }
+
+    public static void buildTree(final List<BigInteger> numbers, Node node) {
+
+    }
+
+    public static boolean findInElement(final String search, final String text) {
+        return false;
+    }
+
+
 }
