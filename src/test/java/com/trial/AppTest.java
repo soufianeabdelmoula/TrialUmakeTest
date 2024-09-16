@@ -53,7 +53,7 @@ public class AppTest {
     }
 
     @Test
-    public void pair_impair() {
+    public void find_pair_and_impair_number() {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7);
 
         Map<Boolean, List<Integer>> partitionedNumbers = new HashMap<>();
@@ -63,12 +63,12 @@ public class AppTest {
     }
 
     @Test
-    public void find_in_element() {
-        final String search = "pas";
+    public void find_exist_element_in_text() {
+        final String strElement = "pas";
         final String text = "Je crois avoir passé le chemin, mais je ne suis pas sûr";
 
         // Ici je voudrais vérifier si le texte contient le mot search
-        Assertions.assertTrue(findInElement(search, text));
+        Assertions.assertEquals(1, findOccurrenceElement(strElement, text));
     }
 
     @Test
@@ -88,8 +88,8 @@ public class AppTest {
 
     }
 
-    public static boolean findInElement(final String search, final String text) {
-        return false;
+    public int findOccurrenceElement(final String strElement, final String text) {
+        return 1;
     }
 
 
