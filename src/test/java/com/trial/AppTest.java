@@ -1,6 +1,7 @@
 package com.trial;
 
 import com.trial.node.Node;
+import com.trial.plane.Plane;
 import com.trial.plane.beans.Square;
 import com.trial.plane.beans.Triangle;
 import org.junit.jupiter.api.Assertions;
@@ -41,15 +42,26 @@ public class AppTest {
                 .addX(60)
                 .addY(320)
                 .build();
+        
+      List<Plane> shapes = List.of(square1, square2, square3, triangle1, triangle2);
+    
+        System.out.println("Aires des formes :");
+        for (Plane shape : shapes) {
+            int area = shape.areaCalc();
+            System.out.println(shape.getType() + " avec aire: " + area);
+        }
+    
+        // Filtrer et compter les formes avec aire > 250
+        long squareCount = shapes.stream()
+                .filter(shape -> shape instanceof Square && shape.areaCalc() > 250)
+                .count();
+    
+        long triangleCount = shapes.stream().filter(shape ->
+                        shape instanceof Triangle && shape.areaCalc() > 250)
+                                                           .count();
 
-
-        // Calculer l'aire pour les carrés et les triangles
-        // et afficher le résultat
-
-
-        // Ici je voudrais filtrer les éléments qui ont une aire < 250
-        // Ensuite je voudrais afficher la taille de liste par type d'élément.
-
+         System.out.println("Nombre de carrés avec aire > 250: " + squareCount);
+         System.out.println("Nombre de triangles avec aire > 250: " + triangleCount);
     }
 
     @Test
