@@ -63,6 +63,7 @@ public class AppTest {
          System.out.println("Nombre de carrés avec aire > 250: " + squareCount);
          System.out.println("Nombre de triangles avec aire > 250: " + triangleCount);
     }
+    
 
     @Test
     public void find_pair_and_impair_number() {
